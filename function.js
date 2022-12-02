@@ -28,9 +28,11 @@ function addDraggingWhenChecked(draggables) {
 }
 
 function removeDraggingWhenChecked(draggables) {
-    draggables.forEach(draggable2 => {
-        if (draggable2.classList.contains('checked')) {
-            removeDragging(draggable2);
+    draggables.forEach(draggable => {
+        if (draggable.classList.contains('checked')) {
+            draggable.classList.remove('checked')
+            draggable.lastElementChild.checked = false
+            removeDragging(draggable);
         }
     });
 }
